@@ -8,7 +8,7 @@ Vue.use(VueLazyLoad, {
   error: './assets/blank.png'
 })
 Vue.use(VueRouter)
-Vue.config.ignoredElements = [/^ion-/]
+
 new Vue({
   el: '#app',
   router,
