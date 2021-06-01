@@ -6,7 +6,7 @@
           <h4 style="color:white">Hot Manga</h4>
 
           <div class="latest">
-            <div class="skeleton" v-if="loading">
+            <!-- <div class="skeleton" v-if="loading">
               <div v-for="n in 7" :key="n + 's'">
                 <vue-skeleton-loader
                   color="rgb(219, 219, 219)"
@@ -34,7 +34,7 @@
                   />
                 </div>
               </div>
-            </div>
+            </div> -->
             <div
               class="manga manga-slide col-md-6"
               v-for="(manga, i) in mangaTop"
@@ -46,11 +46,13 @@
                   selector: 'img'
                 }"
               >
+             
                 <img
                   :data-src="manga.thumbnail"
                   class="manga-image rounded card-img-top"
                   :data-error="require('../assets/blank.png')"
                 />
+            
               </div>
               <div class="manga-body" style="width:12.5em;">
                 <h5
@@ -94,35 +96,7 @@
           </div>
 
           <div class="latests" style="margin-bottom:20px;">
-            <div class="skeleton" v-if="loading">
-              <div v-for="n in 4" :key="n + '-latest-skeleton'">
-                <vue-skeleton-loader
-                  color="rgb(230, 230, 230)"
-                  wave-color="rgb(247, 247, 247)"
-                  :rounded="true"
-                  :width="200"
-                  :height="280"
-                />
-                <div style="margin-top:10px;">
-                  <vue-skeleton-loader
-                    color="rgb(230, 230, 230)"
-                    wave-color="rgb(247, 247, 247)"
-                    :rounded="true"
-                    :width="180"
-                    :height="20"
-                  />
-                </div>
-                <div style="margin-top:10px;">
-                  <vue-skeleton-loader
-                    color="rgb(230, 230, 230)"
-                    wave-color="rgb(247, 247, 247)"
-                    :rounded="true"
-                    :width="80"
-                    :height="20"
-                  />
-                </div>
-              </div>
-            </div>
+            
             <div class="row">
               <div
                 class="col-sm-3"
@@ -181,17 +155,7 @@
               >
             </div>
           </div>
-          <div class="fb-card" v-if="loading">
-            <div class="loader" v-for="n in 6" :key="n">
-              <vue-skeleton-loader
-                color="rgb(230, 230, 230)"
-                wave-color="rgb(247, 247, 247)"
-                :width="Math.floor(Math.random() * (130 - 80) + 80)"
-                :height="20"
-                :rounded="true"
-              />
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

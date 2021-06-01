@@ -5,20 +5,12 @@
         <div class="row pt-5">
           <div class="col-md-2">
             <div class="mx-auto">
-              <div v-if="loading">
-                <vue-skeleton-loader
-                  color="rgb(219, 219, 219)"
-                  wave-color="rgb(247, 247, 247)"
-                  :rounded="true"
-                  :width="250"
-                  :height="350"
-                />
-              </div>
+              
               <div
                 v-lazy-container="{
                   selector: 'img'
                 }"
-                v-else
+                v-if="!loading"
               >
                 <div class="image">
                   <img
@@ -36,36 +28,8 @@
             </div>
           </div>
           <div class="info col-md-6 mt-1 mx-auto">
-            <div v-if="loading">
-              <div class="skeleton">
-                <vue-skeleton-loader
-                  color="rgb(219, 219, 219)"
-                  wave-color="rgb(247, 247, 247)"
-                  :rounded="true"
-                  :width="300"
-                  :height="20"
-                />
-              </div>
-              <div class="skeleton">
-                <vue-skeleton-loader
-                  color="rgb(219, 219, 219)"
-                  wave-color="rgb(247, 247, 247)"
-                  :rounded="true"
-                  :width="180"
-                  :height="20"
-                />
-              </div>
-              <div class="skeleton">
-                <vue-skeleton-loader
-                  color="rgb(219, 219, 219)"
-                  wave-color="rgb(247, 247, 247)"
-                  :rounded="true"
-                  :width="180"
-                  :height="20"
-                />
-              </div>
-            </div>
-            <div v-else class="info">
+            
+            <div v-if="!loading" class="info">
               <h2>{{ mangaInfo.title }}</h2>
               <h5 style="line-height:2em;height:2em;overflow:hidden;">
                 {{ mangaInfo.alternativeName }}
@@ -84,36 +48,8 @@
         </div>
         <div class="row mt-4">
           <div class="col">
-            <div v-if="loading">
-              <div style="margin:5px">
-                <vue-skeleton-loader
-                  color="rgb(219, 219, 219)"
-                  wave-color="rgb(247, 247, 247)"
-                  :rounded="true"
-                  :width="300"
-                  :height="20"
-                />
-              </div>
-              <div style="margin:5px">
-                <vue-skeleton-loader
-                  color="rgb(219, 219, 219)"
-                  wave-color="rgb(247, 247, 247)"
-                  :rounded="true"
-                  :width="300"
-                  :height="20"
-                />
-              </div>
-              <div style="margin:5px">
-                <vue-skeleton-loader
-                  color="rgb(219, 219, 219)"
-                  wave-color="rgb(247, 247, 247)"
-                  :rounded="true"
-                  :width="300"
-                  :height="20"
-                />
-              </div>
-            </div>
-            <p class="desc" v-else style="color:#707070">
+            
+            <p class="desc" v-if="!loading" style="color:#707070">
               {{ mangaInfo.description }}
             </p>
           </div>
