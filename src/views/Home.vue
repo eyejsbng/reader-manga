@@ -201,7 +201,6 @@
 import axios from "axios";
 import router from "../router";
 import genre from "../utils/genre";
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 
 function sideScroll(element, direction, speed, distance, step) {
   var scrollAmount = 0;
@@ -234,10 +233,6 @@ function getLink(val) {
 }
 export default {
   name: "app",
-  components: {
-    Swiper,
-    SwiperSlide
-  },
 
   data() {
     return {
